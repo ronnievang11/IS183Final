@@ -22,11 +22,14 @@ import { TankService } from './tanks/tank.service';
 import { TankComponent } from './tanks/tank/tank.component';
 import { TanksComponent } from './tanks/tanks.component';
 import { TankCreateComponent } from './tanks/tank-create/tank-create.component';
+
+// users
+import { UserService } from './users/user.service';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserCreateComponent } from './users/user-create/user-create.component';
 
-// users
+
 
 // Routes
 const appRoutes: Routes = [
@@ -42,7 +45,9 @@ const appRoutes: Routes = [
   { path: 'tank/:id',   component: TankComponent },
   { path: 'tank-create',   component: TankCreateComponent },
   // users
- 
+  { path: 'users', component: TanksComponent },
+  { path: 'user/:id',   component: TankComponent },
+  { path: 'user-create',   component: TankCreateComponent },
 ];
 
 @NgModule({
@@ -60,10 +65,11 @@ const appRoutes: Routes = [
     TanksComponent,
     TankCreateComponent,
     TankComponent,
+    // users
     UsersComponent,
     UserComponent,
     UserCreateComponent,
-    // users
+    
   
   ],
   imports: [
@@ -74,7 +80,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     BookService,
-    TankService
+    TankService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
